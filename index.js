@@ -239,4 +239,4 @@ app.use((req,res)=>{
     res.status(404).sendFile(__dirname+"/views/404.html");
 })
 
-app.listen(3000,()=>{console.log("server conneted!")})
+app.listen(process.env.PORT,()=>{console.log("server conneted!")})
