@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/stylel.css">
+    <title>About</title>
+</head>
+<body>
+    <style>
+        .main-box{
+            height: 90%;
+            width : 90%;
+            border-radius: 10px;
+            background-color: #f1f2f3;
+        }
+        h1{
+            margin:30px;
+        }
+        p,h3{
+            text-align: left;
+            margin :10px;
+        }
+        p{
+            margin-left: 15px;
+        }
+        .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap :30px;
+        padding: 10px;
+        }
+
+        .grid-container > div {
+        text-align: center;
+        }
+        .grid-container > div > img{
+            height:11rem;
+        }
+        .grid-container > div > h3,.grid-container > div > p{
+            text-align: center;
+        }
+    </style>
+    <section>
+       <a href="/"><img src="img/arrow.png" alt="arrow" style="position: absolute; height:1.7rem; margin:0.5rem 0.7rem"></a>
+        <div class="main-box center" style="overflow-y: scroll; text-align: center;">
+            <div style="width:70%;margin:0;position: absolute;left: 50%;transform: translateX(-50%);-ms-transform: translateX(-50%);">
+            <h1>Overview</h1>
+            <h3>Goals:</h3>
+            <p>This app is designed to help you prepare to Hash Code competition.</p>
+            <h1>Rules</h1>
+            <h3>Score:</h3>
+            <p>Your score depends on the problems you solved, submissions and Coins. <br>
+                Your score will determines your rank.</p>
+            <h3>Coins:</h3>  
+            <p>Everyone starts with standard amount of Coins. <br>
+                You can earn coins by solving problems. <br>
+                Ps: the amount of Bonus Coins will be decreased whenever you submit a wrong output.</p>
+            <h3>Cost:</h3> 
+            <p>Each hint will cost you 50 Coins <br>
+                Each solution will cost you 150 Coins</p>    
+            <h3>Levels:</h3>  
+            <p>Each level except the tutorial will be opened right after its resources are public.</p></p> 
+            
+            <div style="height:40px; width:20px;"></div>
+            <h1>Team</h1>
+            <div class="grid-container">
+                <div>
+                    <img src="img/aziz.png" alt="Aziz">
+                    <h3>Aziz</h3>
+                    <p>Web Dev & Design</p>
+                </div>
+                <div>
+                    <img src="img/meriem.png" alt="Meriem">
+                    <h3>Meriem</h3>
+                    <p>Project Manager</p>
+                </div>
+                <div>
+                    <img src="img/Aaron.png" alt="Aaron">
+                    <h3>Aaron</h3>
+                    <p>App Dev</p>
+                </div>
+            </div>
+            <div style="height:40px; width:20px;"></div>
+        </div>
+    </div>
+    </section>
+</body>
+</html>

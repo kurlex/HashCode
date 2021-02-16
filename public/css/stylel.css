@@ -1,0 +1,49 @@
+* {
+  color: #313131;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.main-box {
+  width: 35rem;
+  border-radius: 10px;
+  background-color: #f1f2f3;
+}
+
+.form1 > input,
+label {
+  color: #1f1f1f;
+}
+
+.form1 {
+  border-radius: 15px;
+  top: 28%;
+  height: 70%;
+  width: 70%;
+  background-color: #fcfcfc;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+}
+
+br {
+  margin-bottom: 10px;
+}
+/* submit button */
+.submit {
+  top: 75%;
+  background-image: linear-gradient(to right, #3e52e7, #5b9be1);
+  color: #fcfcfc;
+  padding: 1rem 4rem;
+  border: none;
+  border-radius: 50px;
+  font-family: "Product_sans_bold", sans-serif;
+  font-size: 17px;
+}
+.submit:hover {
+  cursor: pointer;
+  background-image: linear-gradient(to right, #4359ff, #5fa1e9);
+}

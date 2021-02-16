@@ -1,0 +1,137 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @font-face {
+  font-family: "Product_sans";
+  src: url("../product-sans\ \(2\)/Product\ Sans\ Regular.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Product_sans_bold";
+  src: url("../product-sans\ \(2\)/Product\ Sans\ Bold.ttf") format("truetype");
+}
+
+* {
+  font-family: "Product_sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fcfcfc;
+}
+
+    section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  background-color: #fcfcfc;
+}
+
+.grid-item {
+  text-align: center;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.14);
+}
+.item1 {
+  grid-column: 1;
+  background-image: linear-gradient(-45deg, #253877, #5fa4e0);
+  z-index: 5;
+}
+
+.item2 {
+  position: relative;
+  background-color: #fafafa;
+  grid-column: 2 / span 9;
+  overflow-y: scroll;
+}
+.item2 * {
+  text-align: left;
+  color: #313131 !important;
+}
+.border {
+  width: 100%;
+  border-bottom: solid rgba(255, 255, 255, 0.5) 1px;
+}
+.subtitle {
+  font-size: 16px;
+  opacity: 0.5;
+  text-align: left;
+  padding: 15px;
+}
+.link {
+  display: block;
+  font-size: 16px;
+  font-family: "Product_sans_bold", sans-serif;
+  text-align: left;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.center {
+  margin: 5rem 0 0;
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.miniCard {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 1rem;
+}
+
+.choose h1,
+.choose p {
+  margin: 1rem 0;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-container > div {
+  width: 30%;
+  margin: 10px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  text-align: center !important;
+  margin: 10px 0;
+}
+.download{
+    outline: none;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    min-height:36px;
+    width:100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+.download:hover{
+    background-color: rgba(0,0,0,0.09);
+}
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+</style>

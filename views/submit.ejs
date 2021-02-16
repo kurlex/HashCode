@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('./partitials/head.ejs')%>
+
+<link rel="stylesheet" href="/css/input.css">
+    <title><%=title%></title>
+</head>
+<body>
+<style>
+    .post{
+        opacity: 0;
+        pointer-events: none;
+    }
+    .btn {
+      border-radius: 3px;
+      background-color: #2196f3;
+      border: none;
+      color: white;
+      padding: 6px 15px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .btn:hover {
+      background-color: #1e88e5;
+    }
+
+    .pup{
+        margin:0 !important;
+        font-size : 18px;
+        font-family: 'Product_sans';
+        color : #fff !important;
+    }
+    .center1{
+        margin: 0;
+        position:absolute;
+        right:0;
+        top: 50%;
+        transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+    }
+    .vc{
+        display:inline-block;vertical-align: middle;
+    }
+</style>
+    <section class="grid-container">
+        <%- include('./partitials/vertical_nav.ejs',{s2 : "background-color:rgba(255,255,255,0.1)",s1 : ""}) %>
+        <div class="grid-item item2">
+            <div class="center">
+                <div class="miniCard shadow choose"> 
+                    <h1>Search For Problem</h1>
+                    <p>Please select a level then problem name</p>
+                    <form action="/Output" method="POST" class="flex-container">
+                        <div>
+                            <label for="levels">Choose a Level:</label>
+                            <select id="Slevel" name="level">
+                                <% if(Levels!=null){%>
+                                <% Levels.forEach( level =>{%>
+                                    <% if (level.value==id1) {%>
+                                        <option value= "<%=level.value %>" selected > <%=level.title%></option>
+                                    <% }else{%>
+                                        <option value= "<%=level.value %>"><%=level.title%></option>
+                                 <%}})}%>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="challenge">Choose a Challenge:</label>
+                            <select id="challenge" name="challenge">
+                                <%if(challenges!= null){%>
+                                <% challenges.forEach( challenge =>{%>
+                                        <% if (challenge.value == id2) {%>
+                                            <option value= "<%=challenge.value %>" selected ><%=challenge.title%></option>
+                                        <% }else{%>
+                                            <option value= "<%=challenge.value %>" ><%=challenge.title%></option>
+                                     <%}})}%>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="" style="display: block;height:16px"></label>
+                            <input type="submit" value="Search">
+                        </div>
+                      </form>
+                </div>
+
+                <%if(id2!=null){%>
+                <div class="miniCard shadow choose"> 
+                    <h1>Submission Section</h1>
+                    <p>You can only submit your results if you upload all of the output samples and provide your Key</p>
+                    <%if(inputs!= null && inputs.length >0){%>
+                    <br>
+                    <form action=<%="/Submit/:"+String(id1)+"/:"+String(id1)%> method="POST" enctype="multipart/form-data">
+                        <div style=" margin: 1rem;" >
+                        <div class="inputDiv" style="display:inline-block">
+                            <label for="key" class="inputName" style ="margin : 0">Key</label>
+                            <input type="text" name="key"class="input" >
+                        </div>
+                        <p style="font-size: 14px; opacity: 0.5; display:inline-block">you don't have a <a href="/GetKey">Key</a>?</p>
+                    </div>
+                    <%var i = 0%>
+                    <%inputs.forEach(input => { %>
+                        <% i++ %>
+                        <div style="position: relative; margin : 1rem ; border-bottom: solid 1px rgba(0, 0, 0, 0.09)">
+                            <p class="vc"><p class ="vc" style="font-family: 'Product_sans_bold';">Output Data Set:</p> <%=input.title%></p>
+                            <div class="center1">
+                                <div style="height:0px;overflow:hidden;width:110px">
+                                    <input type="file" id=<%=("fileInput"+String(i))%> name=<%=("fileInput"+String(i))%> required/>
+                                </div>
+                                <button type="button" class="btn" onclick="chooseFile(<%=String(i)%>)"><img class="vc" src="/img/upload.png" alt="upload" style="height: 24px;"><p class="pup vc">Upload</p></button>
+                            </div>
+                        </div>
+                        <%})%>
+                        <button class="post" name="but"></button>
+                    </form>
+                    <div style="text-align: center !important;">
+                        <p style="display: inline-block; color: #f31c32 !important; opacity:0" id="error">Please fill all the required inputs</p>
+                    </div>
+                    <div style="padding :1rem;text-align: center !important;">
+                        <button class="btn" onclick="check(<%=i%>)"><p class="pup vc">Submit</p></button>
+                    </div>
+                    <%} else {%>
+                        <p>Oops!, This problem does not appear to exist or has been removed.</p>
+                    <%}%>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </section>
+    <script src="/js/input.js"></script>
+    <script src="/js/Submit.js"></script>
+</body>
+</html>

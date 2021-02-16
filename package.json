@@ -1,0 +1,29 @@
+{
+  "name": "hashapp",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurlex/Hashapp.git"
+  },
+  "keywords": [
+    "hashapp"
+  ],
+  "author": "Kurlex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurlex/Hashapp/issues"
+  },
+  "homepage": "https://github.com/kurlex/Hashapp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "mongoose": "^5.11.16"
+  }
+}

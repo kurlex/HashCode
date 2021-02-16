@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/font.css">
+    <link rel="stylesheet" href="../public/css/stylel.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Log In</title>
+</head>
+<body>
+    <section>
+       <a href="/"><img src="img/arrow.png" alt="arrow" style="position: absolute; height:1.7rem; margin:0.5rem 0.7rem"></a>
+        <div class="main-box center">
+            <form action="/Login" method="POST">
+                <div class="center form1">
+                    <div style="position: relative;height:100%;">
+                        <div class="center" style="height:100%;width:90%; text-align: center;">
+                            <img src="img/hashappicon.png" alt="hashapp" style="height : 23%;margin:2rem 0 0;">
+                            
+                            <div class="pair">
+                                <div class="icon">
+                                    <img src="../public/img/usr.png" alt="user">
+                                </div>
+                                <div style="position:absolute;right:0;">
+                                    <div class="inputDiv">
+                                        <label for="Email" class="inputName">Email</label>
+                                        <input type="text" name="Email" class="input">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pair">
+                                <div class="icon">
+                                    <img src="../public/img/usr.png" alt="user">
+                                </div>
+                                <div style="position:absolute;right:0;">
+                                    <div class="inputDiv">
+                                        <label for="pwd" class="inputName">Password</label>
+                                        <input type="password" name="pwd" class="input">
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="LOGIN" class="center submit">
+            </form>
+            <div class="center" style="text-align: center; top:90%;">
+                <p style="opacity:0.5">If you don't have Account</p>
+                <div style="height: 10px;"></div>
+                <a href="/Signup" style="text-decoration: none; color:#3e52e7">Sign Up</a>
+            </div>
+        </div>
+    </section>
+    <script src="../public/js/input.js"></script>
+</body>
+</html>

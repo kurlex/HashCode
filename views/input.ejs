@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('./partitials/head.ejs')%>
+    <title><%=title%></title>
+</head>
+<body>
+
+    <section class="grid-container">
+
+        <%- include('./partitials/vertical_nav.ejs',{s1 : "background-color:rgba(255,255,255,0.1)",s2 : ""}) %>
+        <div class="grid-item item2">
+            <div class="center">
+                <div class="miniCard shadow"> 
+                    <h1>Welcome to the HashApp Judge System!</h1>
+                </div>
+                <div class="miniCard shadow choose"> 
+                    <h1>Search For Problem</h1>
+                    <p>Please select a level then problem name</p>
+                    <form action="/Input" method="POST" class="flex-container">
+                        <div>
+                            <label for="levels">Choose a Level:</label>
+                            <select id="Slevel" name="level">
+                                <% if(Levels!=null){%>
+                                <% Levels.forEach( level =>{%>
+                                    <% if (level.value==id1) {%>
+                                        <option value= "<%=level.value %>" selected > <%=level.title%></option>
+                                    <% }else{%>
+                                        <option value= "<%=level.value %>"><%=level.title%></option>
+                                 <%}})}%>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="challenge">Choose a Challenge:</label>
+                            <select id="challenge" name="challenge">
+                                <%if(challenges!= null){%>
+                                <% challenges.forEach( challenge =>{%>
+                                        <% if (challenge.value == id2) {%>
+                                            <option value= "<%=challenge.value %>" selected ><%=challenge.title%></option>
+                                        <% }else{%>
+                                            <option value= "<%=challenge.value %>" ><%=challenge.title%></option>
+                                     <%}})}%>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="" style="display: block;height:16px"></label>
+                            <input type="submit" value="Search">
+                        </div>
+                      </form>
+                </div>
+                <%if(id2!=null){%>
+                <div class="miniCard shadow choose"> 
+                    <h1>Input Data</h1>
+                    <p>Each of the data sets represents a separate instance of the " <%= title %> " problem.</p>
+                    <%if(inputs!= null && inputs.length >0){%>
+                    <br>
+                    <br>
+                    <%inputs.forEach(input => { %>
+                        <a class="download" href=<%= "/Download/:" + String(input.value)%> download=<%=input.title + ".txt"%>>
+                            <img src="/img/download.png" alt="download" style="height: 24px;display:inline-block;vertical-align: middle">
+                            <p style="display: inline-block;vertical-align: middle">Input Data Set: <%=input.title%> </p>
+                        </a>
+                    <%})} else {%>
+                        <p>Oops!, This problem does not appear to exist or has been removed.</p>
+                    <%}%>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </section>
+    <script src="/js/Input.js"></script>
+</body>
+</html>

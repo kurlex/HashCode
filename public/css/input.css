@@ -1,0 +1,19 @@
+.inputName {
+  position: absolute;
+  bottom: 2px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.input {
+  border: none;
+  border-bottom: solid rgba(0, 0, 0, 0.3) 1px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.inputDiv {
+  margin: 1rem 1rem 1rem 0;
+  position: relative;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
