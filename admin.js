@@ -1,4 +1,4 @@
-app.get("/add",(req,res)=>{
+/* app.get("/add",(req,res)=>{
     const levels = [
         { title:"Tutorial", value : 0},
         { title:"Data Structure", value : 1},
@@ -56,3 +56,20 @@ app.get("/add",(req,res)=>{
     })
 
 })
+ */
+const express = require('express');
+const app = express();
+var i = 0;
+const fs = require('fs');
+function calculate(){
+    fs.readFile("./model/input/input0", 'utf8' ,function(err1, usrData){
+            i++;
+    })
+}
+async function aa(){
+const i = await calculate();
+console.log(i)
+console.log(5)
+}
+aa()
+app.listen(3000)
