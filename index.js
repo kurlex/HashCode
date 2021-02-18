@@ -74,7 +74,21 @@ function compare( a, b ) {
     return 0;
   }
 
-function crypto(key){
+  function crypto(key,id){
+    const acc = "Acc";
+    var cry = "";
+    for(var i=0;i<28;i+=4)
+        cry+= key[i];
+    console.log(cry)
+    var v = parseInt(id)%10;
+    key = ""
+    for(var i=0;i<3;i++){
+        key += String.fromCharCode(((cry.charCodeAt(i)+acc.charCodeAt(i))/2)-v)
+    }
+    key+= cry[3]
+    key += String.fromCharCode((cry.charCodeAt(4)+ parseInt(id)/10)/2)
+    key += String.fromCharCode((cry.charCodeAt(5)+v)/2)
+    key += cry[6]
     return key;
 }
 
@@ -129,7 +143,7 @@ app.post('/Submit/:id1/:id2',(req, res, next) => {
           })
           inputs.sort(compare);
         len = inputs.length;
-        if(keys.length != len){
+        if(keys.length != len || req.body.key.lenght!=28){
             //!Wrong Answer
             res.render("WA")
         }
@@ -144,7 +158,7 @@ app.post('/Submit/:id1/:id2',(req, res, next) => {
                 if(serverData!=usrData)
                     res.render("WA");
                 if(len+start==j+1)
-                    res.render("cong",{key : crypto(req.body.key)})
+                    res.render("cong",{key : crypto(req.body.key,id2)})
 
             } 
     }    
