@@ -46,13 +46,13 @@ const Challenges = [
     { level : 0 ,title:"Addition", value : 0},
     { level : 0 ,title:"Square", value : 1},
 
-    { level : 1 ,title:"Chocolate", value : 2},
+    { level : 1 ,title:"Chocolate Lover", value : 2},
     { level : 1 ,title:"Good Number", value : 3},
-    { level : 1 ,title:"Yes/No", value : 4},
+    { level : 1 ,title:"Sum of the cubes", value : 4},
 
-    { level : 2 ,title:"High Quality", value : 5},
-    { level : 2 ,title:"Deci-Binary", value : 6},
-    { level : 2 ,title:"Dense", value : 7},
+    { level : 2 ,title:"High end chocolate", value : 5},
+    { level : 2 ,title:"Deci-Binary numbers", value : 6},
+    { level : 2 ,title:"Array game", value : 7},
     
     { level : 3 ,title:"Gr1", value : 8},
     { level : 3 ,title:"Gr2", value : 9},
