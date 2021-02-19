@@ -115,7 +115,6 @@ app.use(
 
 //res.render('index',{});
 
-//TODO:matensech el donnes ynajem wehed yabdel el value mta3 el forms!!
 
 app.get("/",(req,res)=>{
     res.sendFile(__dirname +"/views/index.html");
@@ -252,10 +251,5 @@ app.get("/Download/:id",(req,res)=>{
 
 app.use((req,res)=>{
     res.status(404).sendFile(__dirname+"/views/404.html");
-})
-
-<<<<<<< HEAD
+}
 app.listen(process.env.PORT,()=>{console.log("server conneted!")})
-=======
-app.listen(process.env.PORT,()=>{console.log("server conneted!")})
->>>>>>> ecccc80 (compatible with phone)
