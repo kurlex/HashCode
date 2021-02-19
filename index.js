@@ -251,5 +251,5 @@ app.get("/Download/:id",(req,res)=>{
 
 app.use((req,res)=>{
     res.status(404).sendFile(__dirname+"/views/404.html");
-}
+})
 app.listen(process.env.PORT,()=>{console.log("server conneted!")})
