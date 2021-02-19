@@ -11,9 +11,15 @@ function check(size){
     }
     for(var i =1 ;i<=size;i++)
         if(document.getElementById("fileInput"+String(i)).files.length == 0){
+            document.getElementById("error").innerText = "Please fill all the required inputs";
             FadeIn(el,"1");
             return;
         }
+    if(document.getElementById("key").value.length!=28){
+        document.getElementById("error").innerText = "Please check your ID";
+        FadeIn(el,"1");
+        return;
+    }
     document.getElementsByClassName("post")[0].click();
 }
 function getSelectedOption(sel) {

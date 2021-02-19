@@ -119,6 +119,7 @@ app.use(
 
 app.get("/",(req,res)=>{
     res.sendFile(__dirname +"/views/index.html");
+
 })
 
 
@@ -128,6 +129,10 @@ app.get("/About",(req,res)=>{
 
 app.get("/GetKey",(req,res)=>{
     res.sendFile(__dirname+"/views/GetKey.html");
+})
+
+app.get("/Phone",(req,res)=>{
+    res.sendFile(__dirname+"/views/phone.html");
 })
 
 app.post('/Submit/:id1/:id2',(req, res, next) => {
@@ -143,7 +148,7 @@ app.post('/Submit/:id1/:id2',(req, res, next) => {
           })
           inputs.sort(compare);
         len = inputs.length;
-        if(keys.length != len || req.body.key.lenght!=28){
+        if(keys.length != len || req.body.key.length!=28){
             //!Wrong Answer
             res.render("WA")
         }
@@ -249,4 +254,8 @@ app.use((req,res)=>{
     res.status(404).sendFile(__dirname+"/views/404.html");
 })
 
+<<<<<<< HEAD
 app.listen(process.env.PORT,()=>{console.log("server conneted!")})
+=======
+app.listen(process.env.PORT,()=>{console.log("server conneted!")})
+>>>>>>> ecccc80 (compatible with phone)

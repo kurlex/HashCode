@@ -4,9 +4,15 @@
 <%- include('./partitials/head.ejs')%>
 
 <link rel="stylesheet" href="/css/input.css">
-    <title><%=title%></title>
+
+<title><%=title%></title>
 </head>
 <body>
+<script>
+    var url1 = new URL(document.location);
+if(window.innerWidth<450)
+    window.location.href = (url1.origin +"/Phone")
+</script>
 <style>
     .post{
         opacity: 0;
@@ -92,7 +98,7 @@
                         <div style=" margin: 1rem;" >
                         <div class="inputDiv" style="display:inline-block">
                             <label for="key" class="inputName" style ="margin : 0">Key</label>
-                            <input type="text" name="key"class="input" >
+                            <input type="text" name="key"class="input" id="key">
                         </div>
                         <p style="font-size: 14px; opacity: 0.5; display:inline-block">you don't have a <a href="/GetKey">Key</a>?</p>
                     </div>
@@ -125,7 +131,7 @@
             </div>
         </div>
     </section>
-    <script src="/js/input.js"></script>
+    <scrip src="/js/input.js"></scrip>
     <script src="/js/Submit.js"></script>
 </body>
 </html>

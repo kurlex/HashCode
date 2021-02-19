@@ -6,6 +6,11 @@
 </head>
 <body>
 
+    <script>
+        var url1 = new URL(document.location);
+    if(window.innerWidth<450)
+        window.location.href = (url1.origin +"/Phone")
+    </script>
     <section class="grid-container">
 
         <%- include('./partitials/vertical_nav.ejs',{s1 : "background-color:rgba(255,255,255,0.1)",s2 : ""}) %>

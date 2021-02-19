@@ -15,6 +15,7 @@
             width : 90%;
             border-radius: 10px;
             background-color: #f1f2f3;
+            margin-top: 10px;
         }
         h1{
             margin:30px;
@@ -42,6 +43,17 @@
         .grid-container > div > h3,.grid-container > div > p{
             text-align: center;
         }
+        @media only screen and (max-width: 450px) {
+  .grid-container {
+    grid-template-columns: auto;
+  }
+  .main-box{
+            width : 100%;
+            border-radius: 0;
+            margin-top: 15px;
+    }
+}
+
     </style>
     <section>
        <a href="/"><img src="img/arrow.png" alt="arrow" style="position: absolute; height:1.7rem; margin:0.5rem 0.7rem"></a>
