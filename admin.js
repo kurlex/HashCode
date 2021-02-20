@@ -66,21 +66,17 @@ function crypto(key,id){
     var cry = "";
     for(var i=0;i<28;i+=4)
         cry+= key[i];
-    console.log(cry)
     var v = parseInt(id)%10;
     key = ""
     for(var i=0;i<3;i++){
         key += String.fromCharCode(((cry.charCodeAt(i)+acc.charCodeAt(i))/2)-v)
     }
-    
-
     key+= cry[3]
-    key += String.fromCharCode((cry.charCodeAt(4)+ parseInt(id)/10)/2)
-    key += String.fromCharCode((cry.charCodeAt(5)+v)/2)
+    key += String.fromCharCode((cry.charCodeAt(4)+ parseInt(id)/10 + 48)/2)
+    key += String.fromCharCode((cry.charCodeAt(5)+v +48)/2)
     key += cry[6]
     return key;
 }
-
-console.log(crypto("sGUwgFUUIFOnVUUKMUSJNVFN2a72",14))
+console.log(crypto("1234567891234567891234567891",14))
 
 app.listen(3000)
