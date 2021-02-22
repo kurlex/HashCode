@@ -66,28 +66,34 @@ function crypto(key,id){
     var cry = "";
     for(var i=0;i<28;i+=4){
         cry+= key[i];
-        console.log(" key[ ",i," ] = ",key[i]);
     }
     var lastDigit = parseInt(parseInt(id)%10);
     var firstDigit = parseInt(parseInt(id)/10);
     key = ""
-    console.log(" firstDigit = ",firstDigit);
-    console.log(" lastDigit = ",lastDigit);
-    console.log(" new key! ")
     for(var i=0;i<3;i++){
-        key += String.fromCharCode(parseInt(((cry.charCodeAt(i)+acc.charCodeAt(i))/2)-lastDigit))
-        console.log(" key[ ",i," ] = ",key[i]," WHERE : (int) key = ",cry.charCodeAt(i)," (int) acc = ", acc.charCodeAt(i) ," totale ascii : ",parseInt(((cry.charCodeAt(i)+acc.charCodeAt(i))/2)-lastDigit));
+        x = parseInt(((cry.charCodeAt(i)+acc.charCodeAt(i))/2)-lastDigit);
+        if(x==92){
+            key+="A";
+        }
+        else
+            key+=String.fromCharCode(x);
+        
     }
     key+= cry[3]
-    console.log(" key [ 3 ] = ",key[3]);
-    key += String.fromCharCode(parseInt((cry.charCodeAt(4)+ firstDigit + 48)/2))
-    console.log(" key[ 4 ] = ",key[4]," WHERE : (int) key = ",cry.charCodeAt(4)," (int) firstDigit = ", firstDigit ," totale ascii : ",parseInt((cry.charCodeAt(4)+ firstDigit + 48)/2));
-    key += String.fromCharCode(parseInt((cry.charCodeAt(5)+ lastDigit +48)/2))
-    console.log(" key[ 5 ] = ",key[5]," WHERE : (int) key = ",cry.charCodeAt(5)," (int) lastDigit = ", lastDigit ," totale ascii : ",parseInt((cry.charCodeAt(5)+ lastDigit +48)/2));
+    x = parseInt((cry.charCodeAt(4)+ firstDigit + 48)/2);
+        if(x==92){
+            key+="A";
+        }
+        else
+            key+=String.fromCharCode(x);
+   
+    x = parseInt((cry.charCodeAt(5)+ lastDigit +48)/2);
+        if(x==92){
+            key+="A";
+        }
+        else
+            key+=String.fromCharCode(x);
     key += cry[6]
-    console.log(" key [ 6 ] = ",key[6]);
     return key;
 }
-console.log(crypto("1234567891234567891234567891",14))
-
-app.listen(3000)
+console.log(crypto("kbb9eScAUUWqJUpPIkEkDjP1ku83",0))

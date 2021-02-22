@@ -74,19 +74,39 @@ function compare( a, b ) {
     return 0;
   }
 
-  function crypto(key,id){
+function crypto(key,id){
+    id--;
     const acc = "Acc";
     var cry = "";
-    for(var i=0;i<28;i+=4)
+    for(var i=0;i<28;i+=4){
         cry+= key[i];
-    var v = parseInt(id)%10;
+    }
+    var lastDigit = parseInt(parseInt(id)%10);
+    var firstDigit = parseInt(parseInt(id)/10);
     key = ""
     for(var i=0;i<3;i++){
-        key += String.fromCharCode(((cry.charCodeAt(i)+acc.charCodeAt(i))/2)-v)
+        x = parseInt(((cry.charCodeAt(i)+acc.charCodeAt(i))/2)-lastDigit);
+        if(x==92){
+            key+="A";
+        }
+        else
+            key+=String.fromCharCode(x);
+        
     }
     key+= cry[3]
-    key += String.fromCharCode((cry.charCodeAt(4)+ parseInt(id)/10 + 48)/2)
-    key += String.fromCharCode((cry.charCodeAt(5)+v +48)/2)
+    x = parseInt((cry.charCodeAt(4)+ firstDigit + 48)/2);
+        if(x==92){
+            key+="A";
+        }
+        else
+            key+=String.fromCharCode(x);
+   
+    x = parseInt((cry.charCodeAt(5)+ lastDigit +48)/2);
+        if(x==92){
+            key+="A";
+        }
+        else
+            key+=String.fromCharCode(x);
     key += cry[6]
     return key;
 }
