@@ -34,6 +34,9 @@ const Inputs = [
     { challenge : 7 ,title:"Medium array",value : 21},
     { challenge : 7 ,title:"Large array",value : 22},
 
+    { challenge : 11 ,title:"Sample",value : 23},
+    { challenge : 11 ,title:"Large File",value : 24},
+
 ]
 const Levels = [
     { title:"Tutorial", value : 0},
@@ -58,9 +61,9 @@ const Challenges = [
     { level : 3 ,title:"Gr2", value : 9},
     { level : 3 ,title:"Gr3", value : 10},
     
-    { level : 4 ,title:"dp1", value : 11},
-    { level : 4 ,title:"dp2", value : 12},
-    { level : 4 ,title:"dp3", value : 13},
+    { level : 4 ,title:"Jumpy Jumpy", value : 11},
+    { level : 4 ,title:"Coming", value : 12},
+    { level : 4 ,title:"Soon", value : 13},
 ]
 const fileUpload = require('express-fileupload')
 const path = require('path')
